@@ -1,5 +1,8 @@
 ## RPCircularProgress
 
+[![Coverage Status](https://coveralls.io/repos/github/iwasrobbed/RPCircularProgress/badge.svg?branch=master)](https://coveralls.io/github/iwasrobbed/RPCircularProgress?branch=master)
+[![Build Status](https://travis-ci.org/iwasrobbed/RPCircularProgress.svg?branch=master)](https://travis-ci.org/iwasrobbed/RPCircularProgress)
+
 UIView subclass written in Swift to show circular progress. 
 
 ![Example Usage](ohhai.gif)

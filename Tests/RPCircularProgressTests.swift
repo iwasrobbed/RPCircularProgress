@@ -5,6 +5,8 @@
 //  Created by Rob Phillips on 4/6/16.
 //  Copyright © 2016 Glazed Donut, LLC. All rights reserved.
 //
+//  See LICENSE for full license agreement.
+//
 
 import Quick
 import Nimble
