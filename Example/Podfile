@@ -1,0 +1,14 @@
+platform :ios, '8.0'
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+
+# use frameworks for Swift
+use_frameworks!
+
+# Autolayout
+pod 'SnapKit'
+
+# Tests
+pod 'Quick'
+pod 'Nimble'
