@@ -5,6 +5,8 @@
 //  Created by Rob Phillips on 4/5/16.
 //  Copyright © 2016 Glazed Donut, LLC. All rights reserved.
 //
+//  See LICENSE for full license agreement.
+//
 
 import UIKit
 
