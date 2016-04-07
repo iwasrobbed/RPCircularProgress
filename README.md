@@ -11,7 +11,7 @@ Is your app using it? [Let me know!](mailto:rob@desideratalabs.co)
 
 Please see the included example app for sample usage.
 
-### Styles:
+### Styles
 
 * Indeterminate (spins infinitely)
 * Normal (set progress between 0.0 and 1.0)
@@ -74,11 +74,11 @@ Note: Most properties below are `@IBInspectable`, but I don't use Interface Buil
 `var indeterminateDuration: CFTimeInterval`
 * Controls the speed at which the indeterminate progress bar animates
 
-### Supports: 
+### Supports
 Swift, ARC & iOS 8+, Autolayout or springs and struts
 
-### A little help from my friends:
+### A little help from my friends
 Please feel free to fork and create a pull request for bug fixes or improvements, being sure to maintain the general coding style, adding tests, and adding comments as necessary.
 
-### Credit:
+### Credit
 This library is effectively a Swift port of [DACircularProgress](https://github.com/danielamitay/DACircularProgress) with some minor changes to the API, so it should be fairly easy to act as a replacement. I really loved that library but unfortunately it wasn't being maintained.
