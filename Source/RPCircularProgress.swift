@@ -97,6 +97,11 @@ public class RPCircularProgress: UIView {
     }
 
     /**
+      A timing function defining the pacing of the animation. Defaults to ease in, ease out.
+     */
+    public var timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+
+    /**
       Getter for the current progress (not observed from any active animations)
      */
     @IBInspectable public var progress: CGFloat {
@@ -263,7 +268,7 @@ private extension RPCircularProgress {
     func animate(pinnedProgress: CGFloat, currentProgress: CGFloat, initialDelay: CFTimeInterval, duration: CFTimeInterval, completion: CompletionBlock?) {
         let animation = CABasicAnimation(keyPath: AnimationKeys.progress)
         animation.duration = duration
-        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.timingFunction = timingFunction
         animation.fromValue = currentProgress
         animation.fillMode = kCAFillModeForwards
         animation.removedOnCompletion = false

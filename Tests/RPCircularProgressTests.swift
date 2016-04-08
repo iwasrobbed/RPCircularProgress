@@ -82,6 +82,18 @@ class RPCircularProgressTests: QuickSpec {
                     expect(progress.clockwiseProgress).to(beTrue())
                 }
 
+                it("should have the correct timing function") {
+                    let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                    progress.timingFunction = timingFunction
+                    progress.updateProgress(1, duration: 2)
+
+                    let animation = progress.layer.animationForKey("progress")
+                    expect(animation).toEventuallyNot(beNil())
+
+                    let currentTimingFunction = animation!.valueForKey("timingFunction") as! CAMediaTimingFunction
+                    expect(currentTimingFunction).to(equal(timingFunction))
+                }
+
                 it("should return current progress") {
                     progress.updateProgress(0.42, animated: false)
                     expect(progress.progress) == 0.42

@@ -64,6 +64,9 @@ Note: Most properties below are `@IBInspectable`, but I don't use Interface Buil
 `var clockwiseProgress: Bool`
 * Sets whether or not the animation should be clockwise
 
+`var timingFunction: CAMediaTimingFunction`
+* A timing function defining the pacing of the animation. Defaults to ease in, ease out.
+
 `var progress: CGFloat`
 * Getter for the current progress (not observed from any active animations)
 
