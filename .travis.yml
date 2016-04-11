@@ -1,12 +1,11 @@
 osx_image: xcode7.3
 language: objective-c
-before_install:
-  - gem install slather -v 2.1.0
-  - cd example
-  - pod install
-  - cd ..
+before_install: 
+  - gem install cocoapods xcpretty slather -N
   - xcrun instruments -w "iPhone 5 (9.3)" || echo "(Pre)Launched the simulator."
+cache: cocoapods
+podfile: Example/Podfile
 script:
-  - xcodebuild test -workspace example/RPCircularProgressExample.xcworkspace -scheme "RPCircularProgressExample" -destination 'platform=iOS Simulator,name=iPhone 5,OS=9.3' -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty && exit ${PIPESTATUS[0]}
-after_success: 
+  - set -o pipefail && xcodebuild test -workspace example/RPCircularProgressExample.xcworkspace -scheme "RPCircularProgressExample" -destination "platform=iOS Simulator,name=iPhone 5,OS=9.3" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
+after_success:
   - slather coverage --ignore "../**/*/Xcode*" --scheme "RPCircularProgressExample" --workspace example/RPCircularProgressExample.xcworkspace example/RPCircularProgressExample.xcodeproj
