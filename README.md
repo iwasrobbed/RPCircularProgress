@@ -2,6 +2,9 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/iwasrobbed/RPCircularProgress/badge.svg?branch=master)](https://coveralls.io/github/iwasrobbed/RPCircularProgress?branch=master)
 [![Build Status](https://travis-ci.org/iwasrobbed/RPCircularProgress.svg?branch=master)](https://travis-ci.org/iwasrobbed/RPCircularProgress)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/iwasrobbed/RPCircularProgress/blob/master/LICENSE)
+[![CocoaPods](https://img.shields.io/cocoapods/v/RPCircularProgress.svg?maxAge=2592000)]()
+[![Swift](https://img.shields.io/badge/language-Swift-blue.svg)](https://swift.org)
 
 UIView subclass written in Swift to show circular progress. 
 
