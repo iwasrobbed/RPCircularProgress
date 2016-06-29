@@ -10,56 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>01C119D6A152396C7B707D82</key>
-		<dict>
-			<key>fileRef</key>
-			<string>8B5DCF99EF3F50C3D71EE9F1</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>301A338F11C5831748E49881</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>AF620BAF6C37722C139A37E2</string>
-				<string>FB44FD697E7206B3E92A217C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>8B5DCF99EF3F50C3D71EE9F1</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>AF620BAF6C37722C139A37E2</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.debug.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.debug.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>B298C5E563085515A097C69A</key>
+		<key>1AA560F84DF1037FDCF74F54</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
@@ -70,7 +21,31 @@
 			<key>isa</key>
 			<string>PBXShellScriptBuildPhase</string>
 			<key>name</key>
-			<string>Check Pods Manifest.lock</string>
+			<string>[CP] Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>1C316DFBA0F8C1DEFF837446</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
 			<key>outputPaths</key>
 			<array/>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -89,7 +64,35 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>C9C3A0F9421FE00960D4CB4D</key>
+		<key>224692EA386012FCE780466F</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_RPCircularProgressExample.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>24809F3CC2DB1CF829B5EC6D</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RPCircularProgressTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>3843CBE4144F922D68C2367D</key>
 		<dict>
 			<key>buildActionMask</key>
 			<string>2147483647</string>
@@ -100,7 +103,7 @@ fi
 			<key>isa</key>
 			<string>PBXShellScriptBuildPhase</string>
 			<key>name</key>
-			<string>Copy Pods Resources</string>
+			<string>[CP] Embed Pods Frameworks</string>
 			<key>outputPaths</key>
 			<array/>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -108,10 +111,217 @@ fi
 			<key>shellPath</key>
 			<string>/bin/sh</string>
 			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh"
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh"
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
+		</dict>
+		<key>57B6F5DB9798BC6675A13902</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>863804756167B728A6F20FD5</string>
+				<string>ADFBA2D1B1527DB18E1CB008</string>
+				<string>24809F3CC2DB1CF829B5EC6D</string>
+				<string>CEEC3EAE1F0727417608A093</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>83328EDA393F78A1A9F1A1C6</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>863804756167B728A6F20FD5</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RPCircularProgressExample.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>8B5DCF99EF3F50C3D71EE9F1</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>93FF68C72EC72584820E4EBA</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>9F06DF254948277220F55FE8</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>ADFBA2D1B1527DB18E1CB008</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RPCircularProgressExample.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>B9ACBAD751135FCC8A49D681</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>BF2B82C3F49C2F58066BB6FA</key>
+		<dict>
+			<key>fileRef</key>
+			<string>224692EA386012FCE780466F</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C3927F8DA7EEA4D092AA1A0A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>[CP] Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>CEEC3EAE1F0727417608A093</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-RPCircularProgressTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>D427C2491CB47562004980FF</key>
 		<dict>
@@ -120,8 +330,8 @@ fi
 				<string>D427C2541CB47563004980FF</string>
 				<string>D4F663071CB68A23007D8441</string>
 				<string>D427C2531CB47562004980FF</string>
-				<string>301A338F11C5831748E49881</string>
 				<string>DE2EB8CC539C32BA2D2CB959</string>
+				<string>57B6F5DB9798BC6675A13902</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -220,7 +430,7 @@ fi
 			<string>2147483647</string>
 			<key>files</key>
 			<array>
-				<string>01C119D6A152396C7B707D82</string>
+				<string>BF2B82C3F49C2F58066BB6FA</string>
 			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
@@ -247,12 +457,13 @@ fi
 			<string>D427C2641CB47563004980FF</string>
 			<key>buildPhases</key>
 			<array>
-				<string>B298C5E563085515A097C69A</string>
+				<string>1C316DFBA0F8C1DEFF837446</string>
 				<string>D427C24E1CB47562004980FF</string>
 				<string>D427C24F1CB47562004980FF</string>
 				<string>D427C2501CB47562004980FF</string>
-				<string>E06FC4B45B607A9355FBE287</string>
-				<string>C9C3A0F9421FE00960D4CB4D</string>
+				<string>1AA560F84DF1037FDCF74F54</string>
+				<string>93FF68C72EC72584820E4EBA</string>
+				<string>B9ACBAD751135FCC8A49D681</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -449,7 +660,7 @@ fi
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
+				<string>8.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>YES</string>
 				<key>ONLY_ACTIVE_ARCH</key>
@@ -527,7 +738,7 @@ fi
 				<key>GCC_WARN_UNUSED_VARIABLE</key>
 				<string>YES</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>9.3</string>
+				<string>8.0</string>
 				<key>MTL_ENABLE_DEBUG_INFO</key>
 				<string>NO</string>
 				<key>SDKROOT</key>
@@ -557,17 +768,19 @@ fi
 		<key>D427C2651CB47563004980FF</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>AF620BAF6C37722C139A37E2</string>
+			<string>863804756167B728A6F20FD5</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<string>$(inherited)</string>
 				<key>INFOPLIST_FILE</key>
 				<string>RPCircularProgressExample/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.glazedDonut.RPCircularProgressExample</string>
 				<key>PRODUCT_NAME</key>
@@ -583,17 +796,19 @@ fi
 		<key>D427C2661CB47563004980FF</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>FB44FD697E7206B3E92A217C</string>
+			<string>ADFBA2D1B1527DB18E1CB008</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
 				<string>AppIcon</string>
 				<key>CLANG_ENABLE_MODULES</key>
 				<string>YES</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<string>$(inherited)</string>
 				<key>INFOPLIST_FILE</key>
 				<string>RPCircularProgressExample/Info.plist</string>
 				<key>LD_RUNPATH_SEARCH_PATHS</key>
-				<string>$(inherited) @executable_path/Frameworks</string>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
 				<key>PRODUCT_BUNDLE_IDENTIFIER</key>
 				<string>com.glazedDonut.RPCircularProgressExample</string>
 				<key>PRODUCT_NAME</key>
@@ -664,7 +879,9 @@ fi
 			<key>buildActionMask</key>
 			<string>2147483647</string>
 			<key>files</key>
-			<array/>
+			<array>
+				<string>ECA935F42462F62B75943B37</string>
+			</array>
 			<key>isa</key>
 			<string>PBXFrameworksBuildPhase</string>
 			<key>runOnlyForDeploymentPostprocessing</key>
@@ -687,9 +904,13 @@ fi
 			<string>D4756A521CB5D82E00432482</string>
 			<key>buildPhases</key>
 			<array>
+				<string>9F06DF254948277220F55FE8</string>
 				<string>D4756A451CB5D82E00432482</string>
 				<string>D4756A461CB5D82E00432482</string>
 				<string>D4756A471CB5D82E00432482</string>
+				<string>3843CBE4144F922D68C2367D</string>
+				<string>C3927F8DA7EEA4D092AA1A0A</string>
+				<string>83328EDA393F78A1A9F1A1C6</string>
 			</array>
 			<key>buildRules</key>
 			<array/>
@@ -745,6 +966,8 @@ fi
 		</dict>
 		<key>D4756A501CB5D82E00432482</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>24809F3CC2DB1CF829B5EC6D</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -767,6 +990,8 @@ fi
 		</dict>
 		<key>D4756A511CB5D82E00432482</key>
 		<dict>
+			<key>baseConfigurationReference</key>
+			<string>CEEC3EAE1F0727417608A093</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>BUNDLE_LOADER</key>
@@ -865,11 +1090,26 @@ fi
 			<key>isa</key>
 			<string>PBXBuildFile</string>
 		</dict>
+		<key>D9FB25FB9EC736706EFBADC1</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_RPCircularProgressTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>DE2EB8CC539C32BA2D2CB959</key>
 		<dict>
 			<key>children</key>
 			<array>
 				<string>8B5DCF99EF3F50C3D71EE9F1</string>
+				<string>224692EA386012FCE780466F</string>
+				<string>D9FB25FB9EC736706EFBADC1</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -878,44 +1118,12 @@ fi
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
-		<key>E06FC4B45B607A9355FBE287</key>
+		<key>ECA935F42462F62B75943B37</key>
 		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
+			<key>fileRef</key>
+			<string>D9FB25FB9EC736706EFBADC1</string>
 			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>name</key>
-			<string>Embed Pods Frameworks</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string>"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh"
-</string>
-			<key>showEnvVarsInLog</key>
-			<string>0</string>
-		</dict>
-		<key>FB44FD697E7206B3E92A217C</key>
-		<dict>
-			<key>includeInIndex</key>
-			<string>1</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.xcconfig</string>
-			<key>name</key>
-			<string>Pods.release.xcconfig</string>
-			<key>path</key>
-			<string>Pods/Target Support Files/Pods/Pods.release.xcconfig</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
+			<string>PBXBuildFile</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>
