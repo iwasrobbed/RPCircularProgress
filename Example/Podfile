@@ -6,13 +6,18 @@ inhibit_all_warnings!
 # use frameworks for Swift
 use_frameworks!
 
-target "RPCircularProgressExample" do
+def shared_pods
     # Autolayout
-    pod 'SnapKit'
+    pod 'SnapKit', '~> 0.21.1'
+end
+
+target "RPCircularProgressExample" do
+    shared_pods
 end
 
 target "RPCircularProgressTests" do
     # Tests
-    pod 'Quick'
-    pod 'Nimble'
+    pod 'Quick', '~> 0.9.2'
+    pod 'Nimble', '~> 4.1.0'
+    shared_pods
 end
