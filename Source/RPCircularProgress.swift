@@ -13,7 +13,7 @@ import UIKit
 public class RPCircularProgress: UIView {
 
     // MARK: - Completion
-
+    
     public typealias CompletionBlock = () -> Void
 
     // MARK: - Public API
@@ -96,6 +96,19 @@ public class RPCircularProgress: UIView {
         }
     }
 
+    /**
+      Sets whether or not the track should be dimmed as it is filled
+     */
+    @IBInspectable public var dimTrackWithProgress: Bool {
+        get {
+            return progressLayer.dimTrackWithProgress
+        }
+        set {
+            progressLayer.dimTrackWithProgress = newValue
+            progressLayer.setNeedsDisplay()
+        }
+    }
+    
     /**
       A timing function defining the pacing of the animation. Defaults to ease in, ease out.
      */
@@ -254,6 +267,7 @@ private extension RPCircularProgress {
         progressLayer.thicknessRatio = Defaults.thicknessRatio
         progressLayer.roundedCorners = Defaults.roundedCorners
         progressLayer.clockwiseProgress = Defaults.clockwiseProgress
+        progressLayer.dimTrackWithProgress = Defaults.dimTrackWithProgress
         indeterminateDuration = Defaults.indeterminateDuration
         progressLayer.indeterminateProgress = Defaults.indeterminateProgress
     }
@@ -320,6 +334,7 @@ private extension RPCircularProgress {
         @NSManaged var roundedCorners: Bool
         @NSManaged var clockwiseProgress: Bool
         @NSManaged var thicknessRatio: CGFloat
+        @NSManaged var dimTrackWithProgress: Bool
 
         @NSManaged var indeterminateProgress: CGFloat
         // This needs to have a setter/getter for it to work with CoreAnimation
@@ -358,7 +373,8 @@ private extension RPCircularProgress {
                 }
 
                 func fillProgress() {
-                    CGContextSetFillColorWithColor(ctx, progressTintColor.CGColor)
+                    let alpha: CGFloat = dimTrackWithProgress ? (0.7 - 1) / 0.75 * progress + 1 : 1
+                    CGContextSetFillColorWithColor(ctx, progressTintColor.colorWithAlphaComponent(alpha).CGColor)
                     let progressPath: CGMutablePathRef = CGPathCreateMutable()
                     CGPathMoveToPoint(progressPath, nil, centerPoint.x, centerPoint.y)
                     CGPathAddArc(progressPath, nil, centerPoint.x, centerPoint.y, radius, CGFloat(3 * M_PI_2), radians, !clockwiseProgress)
@@ -424,6 +440,7 @@ private extension RPCircularProgress {
         static let thicknessRatio: CGFloat = 0.3
         static let roundedCorners = true
         static let clockwiseProgress = true
+        static let dimTrackWithProgress = false
         static let indeterminateDuration: CFTimeInterval = 1.0
         static let indeterminateProgress: CGFloat = 0.3
     }
