@@ -177,7 +177,7 @@ public class RPCircularProgress: UIView {
      - parameter enabled:    Whether or not to enable the animation (defaults to `true`)
      - parameter completion: An optional closure to execute after the animation completes
      */
-    public func enableIndeterminate(enabled: Bool = true, completion: CompletionBlock? = nil) {
+    public func enableIndeterminate(enabled: Bool, completion: CompletionBlock?) {
         if let animation = progressLayer.animationForKey(AnimationKeys.indeterminate) {
             // Check if there are any closures to execute on the existing animation
             if let block = animation.valueForKey(AnimationKeys.completionBlock) as? CompletionBlockObject {
@@ -205,13 +205,13 @@ public class RPCircularProgress: UIView {
      - parameter duration:     Sets the overal duration that the animation should complete within
      - parameter completion:   An optional closure to execute after the animation completes
      */
-    public func updateProgress(progress: CGFloat, animated: Bool = true, initialDelay: CFTimeInterval = 0, duration: CFTimeInterval? = nil, completion: CompletionBlock? = nil) {
+    public func updateProgress(progress: CGFloat, animated: Bool, initialDelay: CFTimeInterval, duration: CFTimeInterval, completion: CompletionBlock?) {
         let pinnedProgress = pin(progress)
         if animated {
 
             // Get duration
             let animationDuration: CFTimeInterval
-            if let duration = duration where duration != 0 {
+            if duration != 0 {
                 animationDuration = duration
             } else {
                 // Same duration as UIProgressView animation
