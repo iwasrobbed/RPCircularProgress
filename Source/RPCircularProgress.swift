@@ -192,10 +192,7 @@ public class RPCircularProgress: UIView {
      */
     public func enableIndeterminate(enabled: Bool, completion: CompletionBlock?) {
         if let animation = progressLayer.animationForKey(AnimationKeys.indeterminate) {
-            // Check if there are any closures to execute on the existing animation
-            if let block = animation.valueForKey(AnimationKeys.completionBlock) as? CompletionBlockObject {
-                block.action()
-            }
+            // This will also call animation did stop for the existing animation
             progressLayer.removeAnimationForKey(AnimationKeys.indeterminate)
 
             // And notify of disabling completion
@@ -280,8 +277,13 @@ private extension RPCircularProgress {
     }
 
     func animate(pinnedProgress: CGFloat, currentProgress: CGFloat, initialDelay: CFTimeInterval, duration: CFTimeInterval, completion: CompletionBlock?) {
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(duration)
+        CATransaction.setCompletionBlock { 
+            completion?()
+        }
+        
         let animation = CABasicAnimation(keyPath: AnimationKeys.progress)
-        animation.duration = duration
         animation.timingFunction = timingFunction
         animation.fromValue = currentProgress
         animation.fillMode = kCAFillModeForwards
@@ -289,11 +291,9 @@ private extension RPCircularProgress {
         animation.toValue = pinnedProgress
         animation.beginTime = CACurrentMediaTime() + initialDelay
         animation.delegate = self
-        if let completion = completion {
-            let completionObject = CompletionBlockObject(action: completion)
-            animation.setValue(completionObject, forKey: AnimationKeys.completionBlock)
-        }
         progressLayer.addAnimation(animation, forKey: AnimationKeys.progress)
+        
+        CATransaction.commit()
     }
 
     // MARK: - Indeterminate 
@@ -301,27 +301,20 @@ private extension RPCircularProgress {
     func addIndeterminateAnimation(completion: CompletionBlock?) {
         guard progressLayer.animationForKey(AnimationKeys.indeterminate) == nil else { return }
 
+        CATransaction.begin()
+        CATransaction.setAnimationDuration(indeterminateDuration)
+        CATransaction.setCompletionBlock {
+            completion?()
+        }
+        
         let animation = CABasicAnimation(keyPath: AnimationKeys.transformRotation)
         animation.byValue = clockwiseProgress ? 2 * M_PI : -2 * M_PI
-        animation.duration = indeterminateDuration
         animation.repeatCount = Float.infinity
         animation.removedOnCompletion = false
         progressLayer.progress = indeterminateProgress
-        if let completion = completion {
-            let completionObject = CompletionBlockObject(action: completion)
-            animation.setValue(completionObject, forKey: AnimationKeys.completionBlock)
-        }
         progressLayer.addAnimation(animation, forKey: AnimationKeys.indeterminate)
-    }
-
-    // Completion
-
-    class CompletionBlockObject: NSObject {
-        var action: CompletionBlock
-
-        required init(action: CompletionBlock) {
-            self.action = action
-        }
+        
+        CATransaction.commit()
     }
 
     // MARK: - Private Classes / Structs
@@ -463,10 +456,6 @@ extension RPCircularProgress {
         let completedValue = anim.valueForKey(AnimationKeys.toValue)
         if let completedValue = completedValue as? CGFloat {
             progressLayer.progress = completedValue
-        }
-
-        if let block = anim.valueForKey(AnimationKeys.completionBlock) as? CompletionBlockObject {
-            block.action()
         }
     }
 
