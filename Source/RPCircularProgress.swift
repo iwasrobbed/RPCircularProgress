@@ -223,6 +223,7 @@ public class RPCircularProgress: UIView {
             let animationDuration: CFTimeInterval
             if duration != 0 {
                 animationDuration = duration
+                animationEndEpoch = NSDate().timeIntervalSince1970 + initialDelay + duration
             } else {
                 // Same duration as UIProgressView animation
                 animationDuration = CFTimeInterval(fabsf(Float(self.progress) - Float(pinnedProgress)))
@@ -232,7 +233,7 @@ public class RPCircularProgress: UIView {
             // Basic animations have their value reset to the original once the animation is finished
             // since only the presentation layer is animating
             var currentProgress: CGFloat = 0
-            if let presentationLayer = progressLayer.presentationLayer() as? ProgressLayer {
+            if let presentationLayer = progressLayer.presentationLayer() as ProgressLayer! {
                 currentProgress = presentationLayer.progress
             }
             progressLayer.progress = currentProgress
@@ -248,6 +249,10 @@ public class RPCircularProgress: UIView {
             completion?()
         }
     }
+    
+    // MARK: - Private Properties
+    
+    var animationEndEpoch: NSTimeInterval?
 }
 
 // MARK: - Private API
@@ -268,6 +273,21 @@ private extension RPCircularProgress {
         indeterminateDuration = Defaults.indeterminateDuration
         progressLayer.indeterminateProgress = Defaults.indeterminateProgress
     }
+    
+    // MARK: - Completion
+    
+    func completionIsValid() -> Bool {
+        var isValid = false
+        
+        // Check that the duration was fulfilled
+        let currentEpoch = NSDate().timeIntervalSince1970
+        if let endingEpoch = animationEndEpoch where round(endingEpoch) <= round(currentEpoch) {
+            isValid = true
+        }
+        
+        animationEndEpoch = nil
+        return isValid
+    }
 
     // MARK: - Progress
 
@@ -279,8 +299,13 @@ private extension RPCircularProgress {
     func animate(pinnedProgress: CGFloat, currentProgress: CGFloat, initialDelay: CFTimeInterval, duration: CFTimeInterval, completion: CompletionBlock?) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(duration)
-        CATransaction.setCompletionBlock { 
-            completion?()
+        animationEndEpoch = NSDate().timeIntervalSince1970 + initialDelay + duration
+        CATransaction.setCompletionBlock { [weak self] in
+            guard let sSelf = self else { return }
+            
+            if sSelf.completionIsValid() {
+                completion?()
+            }
         }
         
         let animation = CABasicAnimation(keyPath: AnimationKeys.progress)
@@ -303,8 +328,12 @@ private extension RPCircularProgress {
 
         CATransaction.begin()
         CATransaction.setAnimationDuration(indeterminateDuration)
-        CATransaction.setCompletionBlock {
-            completion?()
+        CATransaction.setCompletionBlock { [weak self] in
+            guard let sSelf = self else { return }
+            
+            if sSelf.completionIsValid() {
+                completion?()
+            }
         }
         
         let animation = CABasicAnimation(keyPath: AnimationKeys.transformRotation)
@@ -450,9 +479,9 @@ private extension RPCircularProgress {
 
 // MARK: - Animation Delegate
 
-extension RPCircularProgress {
+extension RPCircularProgress: CAAnimationDelegate {
 
-    public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         let completedValue = anim.valueForKey(AnimationKeys.toValue)
         if let completedValue = completedValue as? CGFloat {
             progressLayer.progress = completedValue
