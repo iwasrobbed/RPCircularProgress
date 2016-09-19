@@ -6,6 +6,8 @@
 [![CocoaPods](https://img.shields.io/cocoapods/v/RPCircularProgress.svg?maxAge=2592000)]()
 [![Swift](https://img.shields.io/badge/language-Swift-blue.svg)](https://swift.org)
 
+⚠️ To use with Swift 2.3 please ensure you are using == 0.1.3 ⚠️
+
 UIView subclass written in Swift to show circular progress. 
 
 ![Example Usage](ohhai.gif)
