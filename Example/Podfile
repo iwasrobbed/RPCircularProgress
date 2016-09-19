@@ -1,4 +1,4 @@
-platform :ios, '8.0'
+source 'https://github.com/CocoaPods/Specs.git'
 
 # ignore all warnings from all pods
 inhibit_all_warnings!
@@ -6,9 +6,25 @@ inhibit_all_warnings!
 # use frameworks for Swift
 use_frameworks!
 
-# Autolayout
-pod 'SnapKit'
+project 'RPCircularProgressExample'
 
-# Tests
-pod 'Quick'
-pod 'Nimble'
+target 'RPCircularProgressExample' do
+  # Autolayout
+  pod 'SnapKit', '0.22.0' # Swift 2.3 support 
+  
+  target 'RPCircularProgressTests' do
+    inherit! :search_paths
+
+    # Tests
+    pod 'Quick', '0.9.3' # Swift 2.3 support 
+    pod 'Nimble', '4.1.0' # Swift 2.3 support
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '2.3'
+    end
+  end
+end
