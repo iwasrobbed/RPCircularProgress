@@ -1,18 +1,36 @@
 PODS:
-  - Nimble (4.1.0)
+  - Nimble (5.0.0-alpha.30p1)
   - Quick (0.9.3)
-  - SnapKit (0.22.0)
+  - SnapKit (3.0.0)
 
 DEPENDENCIES:
-  - Nimble (= 4.1.0)
-  - Quick (= 0.9.3)
-  - SnapKit (= 0.22.0)
+  - Nimble (from `https://github.com/Quick/Nimble.git`, commit `db706fc1d7130f6ac96c56aaf0e635fa3217fe57`, branch `master`)
+  - Quick (from `https://github.com/Quick/Quick.git`, commit `1503fb019d72417d5d6e4fbebdbaa03c9e4a125f`, branch `swift-3.0`)
+  - SnapKit (= 3.0.0)
+
+EXTERNAL SOURCES:
+  Nimble:
+    :branch: master
+    :commit: db706fc1d7130f6ac96c56aaf0e635fa3217fe57
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :branch: swift-3.0
+    :commit: 1503fb019d72417d5d6e4fbebdbaa03c9e4a125f
+    :git: https://github.com/Quick/Quick.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: db706fc1d7130f6ac96c56aaf0e635fa3217fe57
+    :git: https://github.com/Quick/Nimble.git
+  Quick:
+    :commit: 1503fb019d72417d5d6e4fbebdbaa03c9e4a125f
+    :git: https://github.com/Quick/Quick.git
 
 SPEC CHECKSUMS:
-  Nimble: 97a0a4cae5124c117115634b2d055d8c97d0af19
-  Quick: 13a2a2b19a5d8e3ed4fd0c36ee46597fd77ebf71
-  SnapKit: 0dd2fd157330f1ea11fd84da13e6be8a7a22bae0
+  Nimble: c5b995b4cd57789ec44b0cfb79640fc00e61a8c7
+  Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
+  SnapKit: 98af0a4e9369d3c58f758967518081dbdc7eb1d9
 
-PODFILE CHECKSUM: ea06595a6efcdb4c8b0d67833487f6507455288a
+PODFILE CHECKSUM: d3c393553362c85108c043d021f293a5ed3ff9a6
 
 COCOAPODS: 1.1.0.rc.2
