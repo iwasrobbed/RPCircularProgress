@@ -25,21 +25,21 @@ class ViewController: UIViewController {
 
     // MARK: - Indeterminate Progress Examples
 
-    lazy private var thinIndeterminate: RPCircularProgress = {
+    lazy fileprivate var thinIndeterminate: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.thicknessRatio = 0.1
         return progress
     }()
 
-    lazy private var thinFilledIndeterminate: RPCircularProgress = {
+    lazy fileprivate var thinFilledIndeterminate: RPCircularProgress = {
         let progress = RPCircularProgress()
-        progress.innerTintColor = UIColor.redColor()
+        progress.innerTintColor = UIColor.red
         progress.thicknessRatio = 0.2
         progress.indeterminateDuration = 0.5
         return progress
     }()
 
-    lazy private var unroundedIndeterminate: RPCircularProgress = {
+    lazy fileprivate var unroundedIndeterminate: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.roundedCorners = false
         progress.thicknessRatio = 0.6
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
         return progress
     }()
 
-    lazy private var chartIndeterminate: RPCircularProgress = {
+    lazy fileprivate var chartIndeterminate: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.roundedCorners = false
         progress.thicknessRatio = 1
@@ -56,13 +56,13 @@ class ViewController: UIViewController {
 
     // MARK: - Progress Examples
 
-    lazy private var thinProgress: RPCircularProgress = {
+    lazy fileprivate var thinProgress: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.thicknessRatio = 0.2
         return progress
     }()
 
-    lazy private var thinFilledProgress: RPCircularProgress = {
+    lazy fileprivate var thinFilledProgress: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.trackTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 0.3)
         progress.progressTintColor = UIColor.init(red: 74 / 255, green: 144 / 255, blue: 226 / 255, alpha: 1)
@@ -70,14 +70,14 @@ class ViewController: UIViewController {
         return progress
     }()
 
-    lazy private var unroundedProgress: RPCircularProgress = {
+    lazy fileprivate var unroundedProgress: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.roundedCorners = false
         progress.thicknessRatio = 0.3
         return progress
     }()
 
-    lazy private var chartProgress: RPCircularProgress = {
+    lazy fileprivate var chartProgress: RPCircularProgress = {
         let progress = RPCircularProgress()
         progress.roundedCorners = false
         progress.thicknessRatio = 1
@@ -106,7 +106,7 @@ private extension ViewController {
 
     func setupContainer() {
         view.addSubview(container)
-        container.snp_makeConstraints { (make) in
+        container.snp.makeConstraints { (make) in
             make.center.equalTo(view)
             make.width.equalTo(view).multipliedBy(0.8)
             make.height.equalTo(view).multipliedBy(0.4)
@@ -143,7 +143,7 @@ private extension ViewController {
         // You can update progress while being indeterminate if you'd like
         thinProgress.updateProgress(0.4, duration: 5)
         thinProgress.enableIndeterminate()
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.thinProgress.updateProgress(1, completion: {
                 self.thinProgress.enableIndeterminate(false)
             })
@@ -160,7 +160,7 @@ private extension ViewController {
         constrain(unroundedProgress, leftView: thinFilledProgress)
 
         unroundedProgress.updateProgress(0.4, initialDelay: 0.6, duration: 4)
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(2 * Double(NSEC_PER_SEC))), dispatch_get_main_queue()) {
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(2 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
             self.unroundedProgress.updateProgress(0.9)
         }
     }
@@ -173,24 +173,24 @@ private extension ViewController {
 
     // MARK: - Setup Helpers
 
-    func constrain(newView: UIView, topView: UIView? = nil) {
+    func constrain(_ newView: UIView, topView: UIView? = nil) {
         container.addSubview(newView)
-        newView.snp_makeConstraints { (make) in
+        newView.snp.makeConstraints { (make) in
             make.size.equalTo(40)
             make.left.equalTo(container).offset(20)
             if let topView = topView {
-                make.top.equalTo(topView.snp_bottom).offset(20)
+                make.top.equalTo(topView.snp.bottom).offset(20)
             } else {
                 make.top.equalTo(container).offset(20)
             }
         }
     }
 
-    func constrain(newView: UIView, leftView: UIView) {
+    func constrain(_ newView: UIView, leftView: UIView) {
         container.addSubview(newView)
-        newView.snp_makeConstraints { (make) in
+        newView.snp.makeConstraints { (make) in
             make.size.equalTo(40)
-            make.left.equalTo(leftView.snp_right).offset(20)
+            make.left.equalTo(leftView.snp.right).offset(20)
             make.top.equalTo(leftView)
         }
     }

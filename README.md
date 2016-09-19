@@ -32,7 +32,7 @@ Please see the included example app for sample usage.
  - parameter enabled:    Whether or not to enable the animation (defaults to `true`)
  - parameter completion: An optional closure to execute after the animation completes
  */
-func enableIndeterminate(enabled: Bool = true, completion: CompletionBlock? = nil) {}
+open func enableIndeterminate(_ enabled: Bool = true, completion: CompletionBlock? = nil) {}
 ```
 
 ```swift
@@ -45,7 +45,7 @@ func enableIndeterminate(enabled: Bool = true, completion: CompletionBlock? = ni
  - parameter duration:     Sets the overal duration that the animation should complete within
  - parameter completion:   An optional closure to execute after the animation completes
  */
-func updateProgress(progress: CGFloat, animated: Bool = true, initialDelay: CFTimeInterval = 0, duration: CFTimeInterval? = nil, completion: CompletionBlock? = nil) {}
+open func updateProgress(_ progress: CGFloat, animated: Bool = true, initialDelay: CFTimeInterval = 0, duration: CFTimeInterval? = nil, completion: CompletionBlock? = nil) {}
 ```
 
 ### Properties
