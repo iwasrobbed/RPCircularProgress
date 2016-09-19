@@ -7,6 +7,7 @@
 [![Swift](https://img.shields.io/badge/language-Swift-blue.svg)](https://swift.org)
 
 ⚠️ To use with Swift 2.3 please ensure you are using == 0.2.3 ⚠️
+
 ⚠️ To use with Swift 3.x please ensure you are using >= 0.3.0 ⚠️
 
 UIView subclass written in Swift to show circular progress. 
