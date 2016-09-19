@@ -4,6 +4,7 @@ rvm:
 language: objective-c
 before_install: 
   - gem install cocoapods -v '1.1.0.rc.2' -N
+  - pod repo update
   - gem install xcpretty slather -N
   - xcrun instruments -w "iPhone 6 (10.0)" || echo "(Pre)Launched the simulator."
 cache: cocoapods
