@@ -24,7 +24,7 @@ class RPCircularProgressTests: QuickSpec {
             context("colors") {
 
                 // Non-default color
-                let color = UIColor.purpleColor()
+                let color = UIColor.purple
 
                 it("should update track color") {
                     progress.trackTintColor = color
@@ -87,10 +87,10 @@ class RPCircularProgressTests: QuickSpec {
                     progress.timingFunction = timingFunction
                     progress.updateProgress(1, duration: 2)
 
-                    let animation = progress.layer.animationForKey("progress")
+                    let animation = progress.layer.animation(forKey: "progress")
                     expect(animation).toEventuallyNot(beNil())
 
-                    let currentTimingFunction = animation!.valueForKey("timingFunction") as! CAMediaTimingFunction
+                    let currentTimingFunction = animation!.value(forKey: "timingFunction") as! CAMediaTimingFunction
                     expect(currentTimingFunction).to(equal(timingFunction))
                 }
 
@@ -134,17 +134,17 @@ class RPCircularProgressTests: QuickSpec {
                 it("should enable the animation") {
                     progress.enableIndeterminate()
 
-                    let animation = progress.layer.animationForKey(key)
+                    let animation = progress.layer.animation(forKey: key)
                     expect(animation).toEventuallyNot(beNil())
                 }
 
                 it("should disable the animation") {
                     progress.enableIndeterminate()
-                    var animation = progress.layer.animationForKey(key)
+                    var animation = progress.layer.animation(forKey: key)
                     expect(animation).toEventuallyNot(beNil())
 
                     progress.enableIndeterminate(false)
-                    animation = progress.layer.animationForKey(key)
+                    animation = progress.layer.animation(forKey: key)
                     expect(animation).to(beNil())
                 }
 
@@ -202,7 +202,7 @@ class RPCircularProgressTests: QuickSpec {
                 it("should add animation if passed as true") {
                     progress.updateProgress(0.42, animated: true)
 
-                    let animation = progress.layer.animationForKey(key)
+                    let animation = progress.layer.animation(forKey: key)
 
                     expect(animation).toEventuallyNot(beNil())
                     expect(progress.progress).toEventually(equal(0.42))
@@ -211,7 +211,7 @@ class RPCircularProgressTests: QuickSpec {
                 it("should not add animation if passed as false") {
                     progress.updateProgress(0.42, animated: false)
 
-                    let animation = progress.layer.animationForKey(key)
+                    let animation = progress.layer.animation(forKey: key)
 
                     expect(animation).to(beNil())
                     expect(progress.progress) == 0.42
@@ -225,10 +225,10 @@ class RPCircularProgressTests: QuickSpec {
                     let beginTime = Int(CACurrentMediaTime() + 42)
                     progress.updateProgress(0.42, initialDelay: 42)
 
-                    let animation = progress.layer.animationForKey(key)
+                    let animation = progress.layer.animation(forKey: key)
                     expect(animation).toEventuallyNot(beNil())
 
-                    let initialDelay = animation?.valueForKey("beginTime") as? Int
+                    let initialDelay = animation?.value(forKey: "beginTime") as? Int
                     expect(initialDelay) == beginTime
                 }
 
@@ -239,10 +239,10 @@ class RPCircularProgressTests: QuickSpec {
                 it("should set the proper value") {
                     progress.updateProgress(0.42, duration: 42)
 
-                    let animation = progress.layer.animationForKey(key)
+                    let animation = progress.layer.animation(forKey: key)
                     expect(animation).toEventuallyNot(beNil())
 
-                    let duration = animation?.valueForKey("duration") as? Int
+                    let duration = animation?.value(forKey: "duration") as? Int
                     expect(duration) == 42
                 }
 
