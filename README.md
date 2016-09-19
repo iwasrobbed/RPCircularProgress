@@ -7,6 +7,7 @@
 [![Swift](https://img.shields.io/badge/language-Swift-blue.svg)](https://swift.org)
 
 ⚠️ To use with Swift 2.3 please ensure you are using == 0.2.3 ⚠️
+
 ⚠️ To use with Swift 3.x please ensure you are using >= 0.3.0 ⚠️
 
 UIView subclass written in Swift to show circular progress. 
@@ -32,7 +33,7 @@ Please see the included example app for sample usage.
  - parameter enabled:    Whether or not to enable the animation (defaults to `true`)
  - parameter completion: An optional closure to execute after the animation completes
  */
-func enableIndeterminate(enabled: Bool = true, completion: CompletionBlock? = nil) {}
+open func enableIndeterminate(_ enabled: Bool = true, completion: CompletionBlock? = nil) {}
 ```
 
 ```swift
@@ -45,7 +46,7 @@ func enableIndeterminate(enabled: Bool = true, completion: CompletionBlock? = ni
  - parameter duration:     Sets the overal duration that the animation should complete within
  - parameter completion:   An optional closure to execute after the animation completes
  */
-func updateProgress(progress: CGFloat, animated: Bool = true, initialDelay: CFTimeInterval = 0, duration: CFTimeInterval? = nil, completion: CompletionBlock? = nil) {}
+open func updateProgress(_ progress: CGFloat, animated: Bool = true, initialDelay: CFTimeInterval = 0, duration: CFTimeInterval? = nil, completion: CompletionBlock? = nil) {}
 ```
 
 ### Properties
