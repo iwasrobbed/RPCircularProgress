@@ -222,7 +222,7 @@ public class RPCircularProgress: UIView {
             // Basic animations have their value reset to the original once the animation is finished
             // since only the presentation layer is animating
             var currentProgress: CGFloat = 0
-            if let presentationLayer = progressLayer.presentationLayer() as? ProgressLayer {
+            if let presentationLayer = progressLayer.presentationLayer() as ProgressLayer! {
                 currentProgress = presentationLayer.progress
             }
             progressLayer.progress = currentProgress
@@ -440,9 +440,9 @@ private extension RPCircularProgress {
 
 // MARK: - Animation Delegate
 
-extension RPCircularProgress {
+extension RPCircularProgress: CAAnimationDelegate {
 
-    public override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
+    public func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         let completedValue = anim.valueForKey(AnimationKeys.toValue)
         if let completedValue = completedValue as? CGFloat {
             progressLayer.progress = completedValue
