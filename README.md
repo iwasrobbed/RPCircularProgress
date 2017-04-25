@@ -4,6 +4,7 @@
 [![Build Status](https://travis-ci.org/iwasrobbed/RPCircularProgress.svg?branch=master)](https://travis-ci.org/iwasrobbed/RPCircularProgress)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/iwasrobbed/RPCircularProgress/blob/master/LICENSE)
 [![CocoaPods](https://img.shields.io/cocoapods/v/RPCircularProgress.svg?maxAge=2592000)]()
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift](https://img.shields.io/badge/language-Swift-blue.svg)](https://swift.org)
 
 ⚠️ To use with Swift 2.3 please ensure you are using == 0.2.3 ⚠️
