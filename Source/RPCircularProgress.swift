@@ -288,7 +288,7 @@ private extension RPCircularProgress {
         guard progressLayer.animation(forKey: AnimationKeys.indeterminate) == nil else { return }
 
         let animation = CABasicAnimation(keyPath: AnimationKeys.transformRotation)
-        animation.byValue = clockwiseProgress ? 2 * M_PI : -2 * M_PI
+        animation.byValue = clockwiseProgress ? 2 * Double.pi : -2 * Double.pi
         animation.duration = indeterminateDuration
         animation.repeatCount = Float.infinity
         animation.isRemovedOnCompletion = false
@@ -334,19 +334,19 @@ private extension RPCircularProgress {
             let centerPoint = CGPoint(x: rect.size.width / 2, y: rect.size.height / 2)
             let radius = min(rect.size.height, rect.size.width) / 2
 
-            let progress: CGFloat = min(self.progress, CGFloat(1 - FLT_EPSILON))
+            let progress: CGFloat = min(self.progress, CGFloat(1 - Float.ulpOfOne))
             var radians: CGFloat = 0
             if clockwiseProgress {
-                radians = CGFloat((Double(progress) * 2 * M_PI) - M_PI_2)
+                radians = CGFloat((Double(progress) * 2 * Double.pi) - (Double.pi / 2))
             } else {
-                radians = CGFloat(3 * M_PI_2 - (Double(progress) * 2 * M_PI))
+                radians = CGFloat(3 * (Double.pi / 2) - (Double(progress) * 2 * Double.pi))
             }
 
             func fillTrack() {
                 ctx.setFillColor(trackTintColor.cgColor)
                 let trackPath = CGMutablePath()
                 trackPath.move(to: centerPoint)
-                trackPath.addArc(center: centerPoint, radius: radius, startAngle: CGFloat(2 * M_PI), endAngle: 0, clockwise: true)
+                trackPath.addArc(center: centerPoint, radius: radius, startAngle: CGFloat(2 * Double.pi), endAngle: 0, clockwise: true)
                 trackPath.closeSubpath()
                 ctx.addPath(trackPath)
                 ctx.fillPath()
@@ -361,7 +361,7 @@ private extension RPCircularProgress {
                     ctx.setFillColor(progressTintColor.cgColor)
                     let progressPath = CGMutablePath()
                     progressPath.move(to: centerPoint)
-                    progressPath.addArc(center: centerPoint, radius: radius, startAngle: CGFloat(3 * M_PI_2), endAngle: radians, clockwise: !clockwiseProgress)
+                    progressPath.addArc(center: centerPoint, radius: radius, startAngle: CGFloat(3 * (Double.pi / 2)), endAngle: radians, clockwise: !clockwiseProgress)
                     progressPath.closeSubpath()
                     ctx.addPath(progressPath)
                     ctx.fillPath()
