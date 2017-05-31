@@ -271,7 +271,7 @@ private extension RPCircularProgress {
         animation.timingFunction = timingFunction
         animation.fromValue = currentProgress
         animation.fillMode = kCAFillModeForwards
-        animation.isRemovedOnCompletion = false
+        animation.isRemovedOnCompletion = true
         animation.toValue = pinnedProgress
         animation.beginTime = CACurrentMediaTime() + initialDelay
         animation.delegate = self
@@ -291,7 +291,7 @@ private extension RPCircularProgress {
         animation.byValue = clockwiseProgress ? 2 * Double.pi : -2 * Double.pi
         animation.duration = indeterminateDuration
         animation.repeatCount = Float.infinity
-        animation.isRemovedOnCompletion = false
+        animation.isRemovedOnCompletion = true
         progressLayer.progress = indeterminateProgress
         if let completion = completion {
             let completionObject = CompletionBlockObject(action: completion)
