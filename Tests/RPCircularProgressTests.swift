@@ -222,14 +222,14 @@ class RPCircularProgressTests: QuickSpec {
             context("initialDelay") {
 
                 it("should set the proper value") {
-                    let beginTime = Int(CACurrentMediaTime() + 42)
+                    let beginTime = NSNumber(floatLiteral: CACurrentMediaTime() + 42)
                     progress.updateProgress(0.42, initialDelay: 42)
 
                     let animation = progress.layer.animation(forKey: key)
                     expect(animation).toEventuallyNot(beNil())
 
-                    let initialDelay = animation?.value(forKey: "beginTime") as? Int
-                    expect(initialDelay) == beginTime
+                    let initialDelay = animation?.value(forKey: "beginTime") as? NSNumber
+                    expect(initialDelay?.intValue) == beginTime.intValue
                 }
 
             }
