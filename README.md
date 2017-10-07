@@ -10,6 +10,8 @@
 
 ⚠️ To use with Swift 3.x please ensure you are using >= 0.3.0 ⚠️
 
+⚠️ To use with Swift 4.x please ensure you are using >= 0.4.0 ⚠️
+
 UIView subclass written in Swift to show circular progress. 
 
 ![Example Usage](ohhai.gif)
