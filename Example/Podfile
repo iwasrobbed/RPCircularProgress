@@ -10,21 +10,21 @@ project 'RPCircularProgressExample'
 
 target 'RPCircularProgressExample' do
   # Autolayout
-  pod 'SnapKit', '3.0.0' # Swift 3.0 support 
+  pod 'SnapKit', '~> 4.0.0' 
   
   target 'RPCircularProgressTests' do
     inherit! :search_paths
 
     # Tests
-    pod 'Quick', :git => 'https://github.com/Quick/Quick.git', :commit => '1503fb019d72417d5d6e4fbebdbaa03c9e4a125f', :branch => 'swift-3.0'  # Swift 3.0 support 
-    pod 'Nimble', :git => 'https://github.com/Quick/Nimble.git', :commit => 'db706fc1d7130f6ac96c56aaf0e635fa3217fe57', :branch => 'master' # Swift 3.0 support
+    pod 'Quick', '~> 1.2.0' 
+    pod 'Nimble', '~> 7.0.1'
   end
 end
 
 post_install do |installer|
   installer.pods_project.targets.each do |target|
     target.build_configurations.each do |config|
-      config.build_settings['SWIFT_VERSION'] = '3.0'
+      config.build_settings['SWIFT_VERSION'] = '4.0'
     end
   end
 end
