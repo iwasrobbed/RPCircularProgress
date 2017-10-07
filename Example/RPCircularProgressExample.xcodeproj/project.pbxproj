@@ -13,6 +13,7 @@
 		D427C25D1CB47563004980FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D427C25C1CB47563004980FF /* Assets.xcassets */; };
 		D427C2681CB47601004980FF /* RPCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = D427C2671CB47601004980FF /* RPCircularProgress.swift */; };
 		D427C26A1CB48707004980FF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D427C2691CB48707004980FF /* Default-568h@2x.png */; };
+		D486AEA61F894EF7004ECB9A /* SnapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D486AEA71F894EF7004ECB9A /* SnapKit.framework */; };
 		D4F6630B1CB68A23007D8441 /* RPCircularProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F663091CB68A23007D8441 /* RPCircularProgressTests.swift */; };
 		FC4D5F67F109C912912D9BEB /* Pods_RPCircularProgressTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BD03C492D181BEBB15DFC9D /* Pods_RPCircularProgressTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,6 +43,7 @@
 		D427C2671CB47601004980FF /* RPCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RPCircularProgress.swift; path = ../../Source/RPCircularProgress.swift; sourceTree = "<group>"; };
 		D427C2691CB48707004980FF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-568h@2x.png"; path = "../Default-568h@2x.png"; sourceTree = "<group>"; };
 		D4756A491CB5D82E00432482 /* RPCircularProgressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPCircularProgressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D486AEA71F894EF7004ECB9A /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F663081CB68A23007D8441 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F663091CB68A23007D8441 /* RPCircularProgressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RPCircularProgressTests.swift; sourceTree = "<group>"; };
 		EEC2672045C253ED129A62A3 /* Pods_RPCircularProgressExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RPCircularProgressExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,6 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D486AEA61F894EF7004ECB9A /* SnapKit.framework in Frameworks */,
 				08C080E20469CEA4E9F045C2 /* Pods_RPCircularProgressExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		DE2EB8CC539C32BA2D2CB959 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D486AEA71F894EF7004ECB9A /* SnapKit.framework */,
 				8B5DCF99EF3F50C3D71EE9F1 /* Pods.framework */,
 				EEC2672045C253ED129A62A3 /* Pods_RPCircularProgressExample.framework */,
 				6BD03C492D181BEBB15DFC9D /* Pods_RPCircularProgressTests.framework */,
@@ -430,6 +434,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -477,6 +482,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -493,7 +499,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.glazedDonut.RPCircularProgressExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -508,7 +514,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glazedDonut.RPCircularProgressExample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -522,7 +528,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glazedDonut.RPCircularProgressTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPCircularProgressExample.app/RPCircularProgressExample";
 			};
 			name = Debug;
@@ -537,7 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.glazedDonut.RPCircularProgressTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RPCircularProgressExample.app/RPCircularProgressExample";
 			};
 			name = Release;
