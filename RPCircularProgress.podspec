@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name         = "RPCircularProgress"
   spec.summary      = "Swift UIView subclass with circular progress properties."
-  spec.version      = "0.4.0"
+  spec.version      = "0.4.1"
   spec.homepage     = "https://github.com/iwasrobbed/RPCircularProgress"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.authors      = { "Rob Phillips" => "rob@robphillips.me" }
