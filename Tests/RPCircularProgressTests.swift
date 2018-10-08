@@ -83,7 +83,7 @@ class RPCircularProgressTests: QuickSpec {
                 }
 
                 it("should have the correct timing function") {
-                    let timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                    let timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
                     progress.timingFunction = timingFunction
                     progress.updateProgress(1, duration: 2)
 
