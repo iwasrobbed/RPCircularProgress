@@ -222,7 +222,7 @@ open class RPCircularProgress: UIView {
             // Basic animations have their value reset to the original once the animation is finished
             // since only the presentation layer is animating
             var currentProgress: CGFloat = 0
-            if let presentationLayer = progressLayer.presentation() as? ProgressLayer {
+            if let presentationLayer = progressLayer.presentation() {
                 currentProgress = presentationLayer.progress
             }
             progressLayer.progress = currentProgress

@@ -9,7 +9,7 @@ DEPENDENCIES:
   - SnapKit (~> 4.0.0)
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Nimble
     - Quick
     - SnapKit
@@ -19,6 +19,6 @@ SPEC CHECKSUMS:
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
   SnapKit: 0de968a9fec17499afa29683b05d0c775b6d1c29
 
-PODFILE CHECKSUM: 14489d38b0980855eca2cc9f747e94c1b31ef727
+PODFILE CHECKSUM: 79cef7f3459434f125fc2a9afd460e53dad46f6a
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3
