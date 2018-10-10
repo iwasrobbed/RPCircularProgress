@@ -1,8 +1,8 @@
-osx_image: xcode9
+osx_image: xcode10
 rvm:
   - 2.2.2
 language: objective-c
-before_install: 
+before_install:
   - gem install cocoapods
   - pod repo update
   - gem install xcpretty slather -N
@@ -10,7 +10,7 @@ before_install:
 cache: cocoapods
 podfile: Example/Podfile
 script:
-  - set -o pipefail && xcodebuild test -workspace example/RPCircularProgressExample.xcworkspace -scheme "RPCircularProgressExample" -destination "platform=iOS Simulator,name=iPhone 6,OS=11.0" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
+  - set -o pipefail && xcodebuild test -workspace example/RPCircularProgressExample.xcworkspace -scheme "RPCircularProgressExample" -destination "platform=iOS Simulator,name=iPhone XS,OS=12.0" -enableCodeCoverage YES ONLY_ACTIVE_ARCH=YES | xcpretty -c
 after_success:
   - pod lib lint --allow-warnings
   - slather coverage --ignore "../**/*/Xcode*" --scheme "RPCircularProgressExample" --workspace example/RPCircularProgressExample.xcworkspace example/RPCircularProgressExample.xcodeproj
