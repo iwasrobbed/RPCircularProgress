@@ -99,7 +99,7 @@ open class RPCircularProgress: UIView {
     /**
       A timing function defining the pacing of the animation. Defaults to ease in, ease out.
      */
-    open var timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+    open var timingFunction: CAMediaTimingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
 
     /**
       Getter for the current progress (not observed from any active animations)
@@ -133,7 +133,7 @@ open class RPCircularProgress: UIView {
 
     fileprivate var progressLayer: ProgressLayer! {
         get {
-            return layer as! ProgressLayer
+            return (layer as! ProgressLayer)
         }
     }
 
@@ -270,7 +270,7 @@ private extension RPCircularProgress {
         animation.duration = duration
         animation.timingFunction = timingFunction
         animation.fromValue = currentProgress
-        animation.fillMode = kCAFillModeForwards
+        animation.fillMode = CAMediaTimingFillMode.forwards
         animation.isRemovedOnCompletion = false
         animation.toValue = pinnedProgress
         animation.beginTime = CACurrentMediaTime() + initialDelay
