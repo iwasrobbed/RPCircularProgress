@@ -133,7 +133,7 @@ open class RPCircularProgress: UIView {
 
     fileprivate var progressLayer: ProgressLayer! {
         get {
-            return layer as! ProgressLayer
+            return (layer as! ProgressLayer)
         }
     }
 
