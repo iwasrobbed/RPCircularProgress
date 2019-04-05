@@ -12,14 +12,14 @@ project 'RPCircularProgressExample'
 
 target 'RPCircularProgressExample' do
   # Autolayout
-  pod 'SnapKit', '~> 4.0.0'
+  pod 'SnapKit', '~> 4.2.0'
 
   target 'RPCircularProgressTests' do
     inherit! :search_paths
 
     # Tests
-    pod 'Quick', '~> 1.3.2'
-    pod 'Nimble', '~> 7.3.1'
+    pod 'Quick', '~> 2.0.0'
+    pod 'Nimble', '~> 8.0.1'
   end
 end
 

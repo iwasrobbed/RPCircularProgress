@@ -252,7 +252,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -261,7 +261,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPCircularProgressExample/Pods-RPCircularProgressExample-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		36A6C7A149C59F7BC1A7E542 /* [CP] Embed Pods Frameworks */ = {
@@ -270,7 +270,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
 				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
 			);
@@ -281,7 +281,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RPCircularProgressTests/Pods-RPCircularProgressTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		57871EDC17EBAB84F8CEE95B /* [CP] Check Pods Manifest.lock */ = {
