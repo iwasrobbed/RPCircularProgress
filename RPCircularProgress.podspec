@@ -8,5 +8,6 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/iwasrobbed/RPCircularProgress.git", :tag => "v" + spec.version.to_s }
   spec.source_files = "Source"
   spec.platform		= :ios, "8.0"
+  spec.swift_version = '4.2'
   spec.requires_arc = true
 end
