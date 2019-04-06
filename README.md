@@ -14,6 +14,8 @@
 
 ⚠️ To use with Swift 4.2 please ensure you are using >= 0.4.1 ⚠️
 
+⚠️ To use with Swift 5.0 please ensure you are using >= 0.5.0 ⚠️
+
 UIView subclass written in Swift to show circular progress.
 
 ![Example Usage](ohhai.gif)
