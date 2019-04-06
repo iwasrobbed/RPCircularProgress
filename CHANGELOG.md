@@ -1,5 +1,30 @@
 # Change Log
 
+## [v0.5.0](https://github.com/iwasrobbed/RPCircularProgress/tree/v0.5.0) (2019-04-06)
+[Full Changelog](https://github.com/iwasrobbed/RPCircularProgress/compare/v0.4.1...v0.5.0)
+
+**Closed issues:**
+
+- s.swift\_version = '4.2' missing from podspec [\#34](https://github.com/iwasrobbed/RPCircularProgress/issues/34)
+- Xcode 10.2 / Swift 5 support [\#36](https://github.com/iwasrobbed/RPCircularProgress/issues/36)
+
+**Merged pull requests:**
+
+- Swift/5.0 [\#37](https://github.com/iwasrobbed/RPCircularProgress/pull/37) ([alex-taffe](https://github.com/alex-taffe))
+- Added swift version to podspec [\#35](https://github.com/iwasrobbed/RPCircularProgress/pull/35) ([kamrankhan07](https://github.com/kamrankhan07))
+
+## [v0.4.1](https://github.com/iwasrobbed/RPCircularProgress/tree/v0.4.1) (2018-10-10)
+[Full Changelog](https://github.com/iwasrobbed/RPCircularProgress/compare/v0.4.0...v0.4.1)
+
+**Closed issues:**
+
+- libswiftXCTest.dylib   Reason: image not found [\#32](https://github.com/iwasrobbed/RPCircularProgress/issues/32)
+
+**Merged pull requests:**
+
+- Swift 4.2 Migration [\#33](https://github.com/iwasrobbed/RPCircularProgress/pull/33) ([alex-taffe](https://github.com/alex-taffe))
+- Remove use of casting to implicitly unwrapped optional [\#30](https://github.com/iwasrobbed/RPCircularProgress/pull/30) ([axtonpitt](https://github.com/axtonpitt))
+
 ## [v0.4.0](https://github.com/iwasrobbed/RPCircularProgress/tree/v0.4.0) (2017-10-07)
 [Full Changelog](https://github.com/iwasrobbed/RPCircularProgress/compare/v0.3.1...v0.4.0)
 
