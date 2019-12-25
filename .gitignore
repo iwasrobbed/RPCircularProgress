@@ -22,3 +22,9 @@ Pods/
 # Carthage
 Carthage/Checkouts
 Carthage/Build
+
+# Swift Package Manager
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
